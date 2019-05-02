@@ -47,3 +47,22 @@ function GetInfo(info:string = "Happy"){
 }
 
 GetInfo("Very happy");
+
+//######## Functions advanced ############
+
+//Anonymous function - Functions which don't have Name/identifiers are considered as Anonymous functions.
+//These functions are dynamic and called during runtime
+
+let StudentName = function (lName:string, fName:string){
+    return fName + "..." + lName;
+}
+
+console.log(StudentName("Anna", "Jackson"));
+
+/* Lambda refers to anonymous functions in programming.
+Lambda functions are a concise mechanism to represent anonymous functions.
+These functions are also called as Arrow functions. */
+
+let StudentFullName = (lName:string, fName:string) => {return fName + ".." + lName};
+
+console.log(StudentFullName("Bond", "James"));

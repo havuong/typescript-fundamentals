@@ -1,34 +1,28 @@
-"use strict";
-exports.__esModule = true;
 //Enum declaration
 var LanguagesKnown;
 (function (LanguagesKnown) {
     LanguagesKnown[LanguagesKnown["English"] = 0] = "English";
-    LanguagesKnown[LanguagesKnown["Hindi"] = 1] = "Hindi";
-    LanguagesKnown[LanguagesKnown["Tamil"] = 2] = "Tamil";
+    LanguagesKnown[LanguagesKnown["Japan"] = 1] = "Japan";
+    LanguagesKnown[LanguagesKnown["Chinese"] = 2] = "Chinese";
 })(LanguagesKnown || (LanguagesKnown = {}));
 //Declaring Student
 var student = {
-    Name: "Karthik",
+    Name: "Anna",
     Age: 30,
-    Phone: 2342342,
-    Language: LanguagesKnown[LanguagesKnown.Tamil]
+    Phone: 08123456,
+    Language: LanguagesKnown[LanguagesKnown.Chinese]
 };
 //List of Students
 var studentsList = [
-    { Name: "Prashanth", Age: 26, Phone: 23423423, Language: LanguagesKnown[LanguagesKnown.English] },
-    { Name: "Shree", Age: 27, Phone: 2454545, Language: LanguagesKnown[LanguagesKnown.Hindi] }
-];
-var studentsListG = [
-    { Name: "Prashanth", Age: 26, Phone: 23423423, Language: LanguagesKnown[LanguagesKnown.English] },
-    { Name: "Shree", Age: 27, Phone: 2454545, Language: LanguagesKnown[LanguagesKnown.Hindi] }
+    { Name: "Bobby", Age: 22, Phone: 08345678, Language: LanguagesKnown[LanguagesKnown.English] },
+    { Name: "Cameron", Age: 27, Phone: 086789012, Language: LanguagesKnown[LanguagesKnown.Japan] }
 ];
 //Pushing a student into the array (List of students)
 studentsList.push(student);
-// for (var index = 0; index < studentsList.length; index++) {
-//     var element = studentsList[index];
-//     console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" +element.Phone + " knows language:"+ element.Language );
-// }
+for (var index = 0; index < studentsList.length; index++) {
+    var element = studentsList[index];
+    console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.Phone + " knows language:" + element.Language);
+}
 //Function declaration
 function GetStudentsList(students) {
     students.forEach(function (element) {
@@ -53,4 +47,16 @@ function GetInfo(info) {
     console.log(info);
 }
 GetInfo("Very happy");
+//######## Functions advanced ############
+//Anonymous function - Functions which don't have Name/identifiers are considered as Anonymous functions.
+//These functions are dynamic and called during runtime
+var StudentName = function (lName, fName) {
+    return fName + "..." + lName;
+};
+console.log(StudentName("Anna", "Jackson"));
+/* Lambda refers to anonymous functions in programming.
+Lambda functions are a concise mechanism to represent anonymous functions.
+These functions are also called as Arrow functions. */
+var StudentFullName = function (lName, fName) { return fName + ".." + lName; };
+console.log(StudentFullName("Bond", "James"));
 //# sourceMappingURL=app.js.map
