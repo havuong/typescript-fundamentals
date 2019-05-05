@@ -1,5 +1,5 @@
 import { IStudentInfo } from "./IStudentInfo";
-import { Students } from "./Student";
+import Students from "./Student";
 
 //Enum declaration
 enum LanguagesKnown { English, Japan, Chinese }
