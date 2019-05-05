@@ -1,8 +1,15 @@
 //Enum declaration
 enum LanguagesKnown { English, Japan, Chinese}
 
+interface IStudentInfo{
+    Name: string
+    Age: Number,
+    Phone: Number,
+    Language: string,
+}
+
 //Declaring Student
-let student = {
+let student: IStudentInfo = {
     Name: "Anna",
     Age: 30,
     Phone: 08123456,
@@ -10,11 +17,15 @@ let student = {
 }
 
 //List of Students
-let studentsList = [
+let studentsList:IStudentInfo[] = [
     {Name: "Bobby", Age:22, Phone:08345678, Language: LanguagesKnown[LanguagesKnown.English]},
     {Name: "Cameron",Age:27, Phone:086789012, Language: LanguagesKnown[LanguagesKnown.Japan]}
 ]
 
+let studentsListG:Array<IStudentInfo> = [
+    {Name: "Bobby", Age:22, Phone:08345678, Language: LanguagesKnown[LanguagesKnown.English]},
+    {Name: "Cameron",Age:27, Phone:086789012, Language: LanguagesKnown[LanguagesKnown.Japan]}
+]
 //Pushing a student into the array (List of students)
 studentsList.push(student);
 
@@ -24,7 +35,7 @@ for (var index = 0; index < studentsList.length; index++) {
 }
 
 //Function declaration
-function GetStudentsList(students: any[]){
+function GetStudentsList(students: IStudentInfo[]){
     students.forEach(element => {
             console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" +element.Phone + " knows language:"+ element.Language );
     });
