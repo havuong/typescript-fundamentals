@@ -66,11 +66,11 @@ console.log(StudentFullName("Bond", "James"));
 //**********Classes ************* */
 var Students = /** @class */ (function () {
     function Students(lName, fName) {
-        this._lName = lName;
-        this._fName = fName;
+        this.lName = lName;
+        this.fName = fName;
     }
     Students.prototype.GetFullName = function () {
-        return this._lName + " " + this._fName;
+        return this.lName + " " + this.fName;
     };
     return Students;
 }());

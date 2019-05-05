@@ -80,15 +80,12 @@ console.log(StudentFullName("Bond", "James"));
 
 //**********Classes ************* */
 class Students {
-private _lName: string;
-private _fName: string;
-    constructor( lName,  fName) {
-        this._lName = lName;
-        this._fName = fName;
+
+    constructor(private lName, private fName) {
     }
 
     GetFullName(): string {
-        return this._lName + " " + this._fName;
+        return this.lName + " " + this.fName;
     }
 
 }
