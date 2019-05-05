@@ -1,12 +1,8 @@
+import { IStudentInfo } from "./IStudentInfo";
+import { Students } from "./Student";
+
 //Enum declaration
 enum LanguagesKnown { English, Japan, Chinese }
-
-interface IStudentInfo {
-    Name: string
-    Age: Number,
-    Phone: Number,
-    Language: string,
-}
 
 //Declaring Student
 let student: IStudentInfo = {
@@ -79,16 +75,6 @@ let StudentFullName = (lName: string, fName: string) => { return fName + ".." + 
 console.log(StudentFullName("Bond", "James"));
 
 //**********Classes ************* */
-class Students {
-
-    constructor(private lName, private fName) {
-    }
-
-    GetFullName(): string {
-        return this.lName + " " + this.fName;
-    }
-
-}
 
 let s = new Students("CC", "Chloe");
 console.log(s.GetFullName());
