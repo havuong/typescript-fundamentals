@@ -17,6 +17,10 @@ var studentsList = [
     { Name: "Bobby", Age: 22, Phone: 08345678, Language: LanguagesKnown[LanguagesKnown.English] },
     { Name: "Cameron", Age: 27, Phone: 086789012, Language: LanguagesKnown[LanguagesKnown.Japan] }
 ];
+var studentsListG = [
+    { Name: "Bobby", Age: 22, Phone: 08345678, Language: LanguagesKnown[LanguagesKnown.English] },
+    { Name: "Cameron", Age: 27, Phone: 086789012, Language: LanguagesKnown[LanguagesKnown.Japan] }
+];
 //Pushing a student into the array (List of students)
 studentsList.push(student);
 for (var index = 0; index < studentsList.length; index++) {
@@ -59,4 +63,17 @@ Lambda functions are a concise mechanism to represent anonymous functions.
 These functions are also called as Arrow functions. */
 var StudentFullName = function (lName, fName) { return fName + ".." + lName; };
 console.log(StudentFullName("Bond", "James"));
+//**********Classes ************* */
+var Students = /** @class */ (function () {
+    function Students(lName, fName) {
+        this._lName = lName;
+        this._fName = fName;
+    }
+    Students.prototype.GetFullName = function () {
+        return this._lName + " " + this._fName;
+    };
+    return Students;
+}());
+var s = new Students("CC", "Chloe");
+console.log(s.GetFullName());
 //# sourceMappingURL=app.js.map

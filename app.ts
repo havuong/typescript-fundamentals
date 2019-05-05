@@ -1,7 +1,7 @@
 //Enum declaration
-enum LanguagesKnown { English, Japan, Chinese}
+enum LanguagesKnown { English, Japan, Chinese }
 
-interface IStudentInfo{
+interface IStudentInfo {
     Name: string
     Age: Number,
     Phone: Number,
@@ -17,43 +17,43 @@ let student: IStudentInfo = {
 }
 
 //List of Students
-let studentsList:IStudentInfo[] = [
-    {Name: "Bobby", Age:22, Phone:08345678, Language: LanguagesKnown[LanguagesKnown.English]},
-    {Name: "Cameron",Age:27, Phone:086789012, Language: LanguagesKnown[LanguagesKnown.Japan]}
+let studentsList: IStudentInfo[] = [
+    { Name: "Bobby", Age: 22, Phone: 08345678, Language: LanguagesKnown[LanguagesKnown.English] },
+    { Name: "Cameron", Age: 27, Phone: 086789012, Language: LanguagesKnown[LanguagesKnown.Japan] }
 ]
 
-let studentsListG:Array<IStudentInfo> = [
-    {Name: "Bobby", Age:22, Phone:08345678, Language: LanguagesKnown[LanguagesKnown.English]},
-    {Name: "Cameron",Age:27, Phone:086789012, Language: LanguagesKnown[LanguagesKnown.Japan]}
+let studentsListG: Array<IStudentInfo> = [
+    { Name: "Bobby", Age: 22, Phone: 08345678, Language: LanguagesKnown[LanguagesKnown.English] },
+    { Name: "Cameron", Age: 27, Phone: 086789012, Language: LanguagesKnown[LanguagesKnown.Japan] }
 ]
 //Pushing a student into the array (List of students)
 studentsList.push(student);
 
 for (var index = 0; index < studentsList.length; index++) {
     var element = studentsList[index];
-    console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" +element.Phone + " knows language:"+ element.Language );
+    console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.Phone + " knows language:" + element.Language);
 }
 
 //Function declaration
-function GetStudentsList(students: IStudentInfo[]){
+function GetStudentsList(students: IStudentInfo[]) {
     students.forEach(element => {
-            console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" +element.Phone + " knows language:"+ element.Language );
+        console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.Phone + " knows language:" + element.Language);
     });
 }
 
 GetStudentsList(studentsList);
 
 //Rest Parameters
-function GetNumbers(...nums: number[]){
+function GetNumbers(...nums: number[]) {
     nums.forEach(element => {
         console.log("Number: " + element);
     });
 }
 
-GetNumbers(1,2,3,4,5,6)
+GetNumbers(1, 2, 3, 4, 5, 6)
 
 //Default Parameters
-function GetInfo(info:string = "Happy"){
+function GetInfo(info: string = "Happy") {
     console.log(info);
 }
 
@@ -64,7 +64,7 @@ GetInfo("Very happy");
 //Anonymous function - Functions which don't have Name/identifiers are considered as Anonymous functions.
 //These functions are dynamic and called during runtime
 
-let StudentName = function (lName:string, fName:string){
+let StudentName = function (lName: string, fName: string) {
     return fName + "..." + lName;
 }
 
@@ -74,6 +74,24 @@ console.log(StudentName("Anna", "Jackson"));
 Lambda functions are a concise mechanism to represent anonymous functions.
 These functions are also called as Arrow functions. */
 
-let StudentFullName = (lName:string, fName:string) => {return fName + ".." + lName};
+let StudentFullName = (lName: string, fName: string) => { return fName + ".." + lName };
 
 console.log(StudentFullName("Bond", "James"));
+
+//**********Classes ************* */
+class Students {
+private _lName: string;
+private _fName: string;
+    constructor( lName,  fName) {
+        this._lName = lName;
+        this._fName = fName;
+    }
+
+    GetFullName(): string {
+        return this._lName + " " + this._fName;
+    }
+
+}
+
+let s = new Students("CC", "Chloe");
+console.log(s.GetFullName());
