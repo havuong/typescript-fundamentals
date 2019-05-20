@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+var Student_1 = require("./Student");
 //Enum declaration
 var LanguagesKnown;
 (function (LanguagesKnown) {
@@ -64,16 +67,6 @@ These functions are also called as Arrow functions. */
 var StudentFullName = function (lName, fName) { return fName + ".." + lName; };
 console.log(StudentFullName("Bond", "James"));
 //**********Classes ************* */
-var Students = /** @class */ (function () {
-    function Students(lName, fName) {
-        this.lName = lName;
-        this.fName = fName;
-    }
-    Students.prototype.GetFullName = function () {
-        return this.lName + " " + this.fName;
-    };
-    return Students;
-}());
-var s = new Students("CC", "Chloe");
+var s = new Student_1["default"]("CC", "Chloe");
 console.log(s.GetFullName());
 //# sourceMappingURL=app.js.map
